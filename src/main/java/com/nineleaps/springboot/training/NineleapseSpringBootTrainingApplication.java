@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NineleapseSpringBootTrainingApplication {
 
 	public static void main(String[] args) {
+		try {
 		SpringApplication.run(NineleapseSpringBootTrainingApplication.class, args);
+		}catch(Exception ex) {
+			
+		}
 	}
 
 }
