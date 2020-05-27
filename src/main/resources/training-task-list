@@ -1,0 +1,15 @@
+#Step-01: CREATE AND INITIALIZE GIT REPO
+1. Create a git repo -> https://github.com/streamvk/nineleapse-spring-boot-training.git
+2. Create two branches for this repo-> master and 01-spring-boot-base-camp
+3.initialize repo from  git bash cmd -> git init
+
+#####################################################
+#Step-02: Implement User Management Service 
+
+1. Create User -> POST - /create/user.
+2.Get all the users -> GET -/users
+3.Get user by id -> GET -/user/byuserid/{id}
+4.Update user by id-> UPDATE -/update/user/{id}
+5.Delete user by id -> DELETE -/delete/user/{id}
+6.Get user by username -> GET -/user/byusername/{username}
+#####################################################
