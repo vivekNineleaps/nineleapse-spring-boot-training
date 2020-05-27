@@ -12,7 +12,7 @@
  
         <RollingFile name="appLog"
             fileName="${APP_LOG_ROOT}/hillytech-gateway/admin.log"
-            filePattern="${APP_LOG_ROOT}/hillytech-gateway/hillytech-user-%d{yyyy-MM-dd}-%i.log">
+            filePattern="${APP_LOG_ROOT}/nineleaps/nineleaps-spring-boot-training-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
                 <SizeBasedTriggeringPolicy size="19500KB" />
@@ -23,7 +23,7 @@
     </Appenders>
     <Loggers>
  
-        <Logger name="com.hillytech" additivity="false">
+        <Logger name="com.nineleaps.springboot.training" additivity="false">
             <AppenderRef ref="appLog" />
             <AppenderRef ref="Console" />
         </Logger>
