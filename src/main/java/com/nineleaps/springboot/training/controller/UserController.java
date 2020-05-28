@@ -27,6 +27,11 @@ import com.nineleaps.springboot.training.exception.UsernameNotFoundException;
 import com.nineleaps.springboot.training.model.User;
 import com.nineleaps.springboot.training.service.UserService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+@Api(tags="UserManagement RestFul Service", value="UserController", description="Controller For User Management")
 @RestController
 @Validated
 public class UserController {
@@ -34,8 +39,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@ApiOperation(value="Create New User")
 	@PostMapping(value= {"/create/user"})
-	public ResponseEntity<Void> createUser(@Valid @RequestBody User user){
+	public ResponseEntity<Void> createUser(@ApiParam("User Information for a new user to be created.") @Valid @RequestBody User user){
 		try {
 		userService.createUser(user);
 		HttpHeaders headers= new HttpHeaders();
@@ -48,6 +54,7 @@ public class UserController {
 			throw new ResponseStatusException(HttpStatus.FOUND,ex.getMessage());
 		}
 	}
+	@ApiOperation(value="Get User By Id")
 	@GetMapping(path= "/user/byuserid/{id}")
 	public User getUserById(@PathVariable("id") @Min(1) Long id){
 		User user;
